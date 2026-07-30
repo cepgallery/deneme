@@ -1,99 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CEP Gallery</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Helvetica, Arial;
-        background: #0a0a0a;
-        color: #fff;
-      }
+<head>
+  <title>CEP Gallery</title>
 
-      header {
-        padding: 20px;
-        text-align: center;
-        border-bottom: 1px solid #222;
-      }
+  <style>
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial;
+      background: #fff;
+      color: #111;
+    }
 
-      h1 {
-        margin: 0;
-        font-size: 28px;
-      }
+    header {
+      padding: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: 1px solid #eee;
+    }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 10px;
-        padding: 20px;
-      }
+    .hero {
+      height: 60vh;
+      background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+    }
 
-      .item {
-        position: relative;
-      }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
 
-      .item img {
-        width: 100%;
-        display: block;
-      }
+    .item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
 
-      .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0,0,0,0.6);
-        padding: 10px;
-        font-size: 14px;
-      }
+    .item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
 
-      .overlay span {
-        display: block;
-        opacity: 0.7;
-        font-size: 12px;
-      }
-    </style>
-  </head>
+    .item:hover img {
+      transform: scale(1.05);
+      filter: brightness(70%);
+    }
 
-  <body>
-    <header>
-      <h1>CEP Gallery</h1>
-    </header>
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: white;
+      padding: 20px;
+      opacity: 0;
+      transition: 0.3s;
+    }
 
-    <div class="grid">
+    .item:hover .overlay {
+      opacity: 1;
+    }
 
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" />
-        <div class="overlay">
-          Abstract Form
-          <span>Artist Name</span>
-        </div>
-      </div>
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
-        <div class="overlay">
-          Minimal Space
-          <span>Artist Name</span>
-        </div>
-      </div>
+    .artist {
+      font-size: 14px;
+      opacity: 0.8;
+    }
 
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" />
-        <div class="overlay">
-          Geometry Study
-          <span>Artist Name</span>
-        </div>
-      </div>
+  </style>
+</head>
 
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" />
-        <div class="overlay">
-          Landscape
-          <span>Artist Name</span>
-        </div>
-      </div>
+<body>
 
+<header>CEP Gallery</header>
+
+<div class="hero">
+  Discover Contemporary Art
+</div>
+
+<div class="grid">
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b">
+    <div class="overlay">
+      <div class="title">Abstract Form</div>
+      <div class="artist">Artist Name</div>
     </div>
-  </body>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div class="overlay">
+      <div class="title">Minimal Space</div>
+      <div class="artist">Artist Name</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+    <div class="overlay">
+      <div class="title">Geometry Study</div>
+      <div class="artist">Artist Name</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e">
+    <div class="overlay">
+      <div class="title">Landscape</div>
+      <div class="artist">Artist Name</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
 </html>
